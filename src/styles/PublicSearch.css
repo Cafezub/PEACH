@@ -1,0 +1,464 @@
+/* src/pages/styles/PublicSearch.css */
+
+/* Container principal */
+.public-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho */
+.public-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.public-header h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.public-header p {
+  color: #666;
+}
+
+/* Seção de busca */
+.search-section {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+/* Botões de toggle */
+.toggle-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toggle-btn.name-active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.toggle-btn.cpf-active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.toggle-btn.name-inactive {
+  background: #e0e0e0;
+  color: #555;
+}
+
+.toggle-btn.cpf-inactive {
+  background: #e0e0e0;
+  color: #555;
+}
+
+/* Grupo de busca */
+.search-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 3;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #667eea;
+}
+
+.btn-search {
+  flex: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: transform 0.3s;
+}
+
+.btn-search:hover {
+  transform: translateY(-2px);
+}
+
+.btn-search:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-clear {
+  padding: 14px 24px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.btn-clear:hover {
+  background: #5a6268;
+}
+
+/* Dicas de busca */
+.search-tips {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e3f2fd;
+  border-radius: 8px;
+  border-left: 4px solid #2196f3;
+}
+
+.search-tips p {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #1565c0;
+}
+
+.search-tips ul {
+  margin-left: 20px;
+  color: #555;
+}
+
+.search-tips li {
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+/* Resultados */
+.results-header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.results-header h2 {
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.results-count {
+  color: #667eea;
+  font-weight: normal;
+}
+
+/* Grid de documentos */
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+/* Card de documento */
+.doc-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.doc-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+.doc-card.found {
+  background: #f0fff4;
+  border-color: #4caf50;
+}
+
+/* Cabeçalho do card */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.lost {
+  background: #fff3e0;
+  color: #ff9800;
+}
+
+.status-badge.found {
+  background: #e8f5e9;
+  color: #4caf50;
+}
+
+.doc-type-badge {
+  background: #667eea;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Conteúdo do card */
+.doc-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.doc-line {
+  margin: 8px 0;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.doc-label {
+  font-weight: 600;
+  color: #555;
+  min-width: 70px;
+}
+
+.location-link {
+  color: #2196f3;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.location-link:hover {
+  text-decoration: underline;
+  color: #0b7dda;
+}
+
+.doc-description {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.doc-description .doc-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Contato */
+.contact-card {
+  margin: 10px 0;
+  padding: 10px;
+  background: #e3f2fd;
+  border-radius: 8px;
+}
+
+.contact-card p:first-child {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #1565c0;
+}
+
+.contact-card p {
+  margin: 5px 0;
+}
+
+/* Datas */
+.doc-date {
+  font-size: 11px;
+  color: #999;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.doc-found-date {
+  font-size: 12px;
+  color: #4caf50;
+  margin-top: 5px;
+  text-align: right;
+  font-weight: 500;
+}
+
+/* Estados */
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+  color: #667eea;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #999;
+}
+
+.empty-state p:first-child {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.empty-state-tips {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.empty-state-tips p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.empty-state-tips ul {
+  margin-left: 20px;
+}
+
+.empty-state-tips li {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Mensagem inicial */
+.initial-message {
+  text-align: center;
+  padding: 60px 40px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.message-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.initial-message h3 {
+  color: #555;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.initial-message p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.message-example {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message-example p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.example-box {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.example-box span {
+  background: #f0f0f0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #667eea;
+  font-family: monospace;
+}
+
+.message-note {
+  font-size: 13px;
+  color: #ff9800;
+  margin-top: 20px;
+  background: #fff3e0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .public-container {
+    padding: 15px;
+  }
+  
+  .toggle-buttons {
+    flex-direction: column;
+  }
+  
+  .search-group {
+    flex-direction: column;
+  }
+  
+  .btn-search, .btn-clear {
+    width: 100%;
+  }
+  
+  .documents-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .doc-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .doc-label {
+    margin-bottom: 3px;
+  }
+  
+  .initial-message {
+    padding: 40px 20px;
+  }
+  
+  .message-icon {
+    font-size: 48px;
+  }
+  
+  .example-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
